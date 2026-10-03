@@ -1,0 +1,4 @@
+Searching in the 1D array,
+A[i]= base address + i* size of each element(if i starts with 0)
+A[i]= base address + (i-1)* size of each element(if i starts with 1)
+GENERAL FORMULA=A[i]= BA+(i-LB)*s(lb= lower bound)
