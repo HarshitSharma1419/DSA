@@ -116,6 +116,7 @@ void deleteany()
     struct node *ptr, *temp;
     int pos;
     temp = head;
+    ptr=head->next;
     if (head == NULL)
     {
         printf("EMPTY\n");
@@ -125,14 +126,14 @@ void deleteany()
         scanf("%d", &pos);
         for (int i = 0; i < pos - 1; i++)
         {
-            temp = temp->next;
+            temp= temp->next;
+            ptr= ptr->next;
             if (ptr == NULL)
             {
                 printf("\nCan't delete");
                 return;
             }
         }
-        ptr = temp->next;
         temp->next = ptr->next;
         free(ptr);
     }
@@ -157,16 +158,14 @@ void deletelast()
     {
 
         temp = head;
+        ptr = head->next;
 
-        while (temp->next->next!= NULL)
+        while (ptr->next!= NULL)
         {
-            temp = temp->next; 
+            temp = temp->next;
+            ptr = ptr->next;
         }
-
-        ptr=temp->next;
-
         temp->next = NULL;
-
         free(ptr);
     }
 }
